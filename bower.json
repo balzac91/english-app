@@ -1,0 +1,17 @@
+{
+  "name": "english-app",
+  "description": "Tool for learning english",
+  "main": "",
+  "authors": [
+    "Kamil Fus"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/balzac91/english-app",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
