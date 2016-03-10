@@ -1,0 +1,11 @@
+{
+  "name": "english-app",
+  "version": "0.0.1",
+  "description": "Tool for learning english",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balzac91/english-app.git"
+  },
+  "author": "Kamil Fus",
+  "license": "MIT"
+}
