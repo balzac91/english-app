@@ -5,13 +5,9 @@
     .module('app')
     .controller('PageOneController', PageOneController);
 
-  PageOneController.$inject = ['logService'];
-
-  function PageOneController(logService) {
+  function PageOneController() {
     var vm = this;
 
     vm.text = 'page one controller';
-
-    logService.logError(vm.text);
   }
 })();
