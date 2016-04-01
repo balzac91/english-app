@@ -2,10 +2,30 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>English App</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+  <title>Angular template</title>
+  <!-- inject:css -->
+  <link rel="stylesheet" href="./app.css">
+  <!-- endinject -->
 </head>
-<body ng-app>
+<body ng-app="app">
 
-  <script src="../bower_components/angular/angular.min.js"></script>
+<menu></menu>
+<ui-view></ui-view>
+
+<!-- inject:js -->
+<script src="./bower_components/angular/angular.min.js"></script>
+<script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="./app.js"></script>
+<script src="./app.routes.js"></script>
+<script src="./pages/page-one/page-one.controller.js"></script>
+<script src="./pages/page-two/page-two.controller.js"></script>
+<script src="./services/log.service.js"></script>
+<script src="./components/menu/menu.directive.js"></script>
+<!-- endinject -->
 </body>
 </html>

@@ -1,7 +1,7 @@
 {
   "name": "english-app",
   "version": "0.0.1",
-  "description": "Tool for learning english",
+  "description": "A tool for learning english",
   "main": "",
   "authors": [
     "Kamil Fus"
@@ -16,6 +16,10 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "^1.5.0"
+    "angular": "^1.5.0",
+    "angular-ui-router": "^0.2.18",
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.5.0",
+    "angular-bootstrap": "^1.2.5"
   }
 }
