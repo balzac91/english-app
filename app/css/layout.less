@@ -1,7 +1,6 @@
 @import 'variables.less';
 
 @sidebar-width: 200px;
-@color-dark: #222d32;
 @menu-transition-duration: 0.4s;
 
 body {
@@ -20,6 +19,20 @@ body {
 
   @media (max-width: @screen-xs-max) {
     transform: translate(-@sidebar-width);
+  }
+
+  .nav-link {
+    color: @nav-link-color;
+
+    &:hover {
+      color: @nav-link-hover-color;
+    }
+  }
+
+  .nav-list-item {
+    &.active {
+      background-color: @nav-link-active-bg;
+    }
   }
 }
 
