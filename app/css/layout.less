@@ -1,0 +1,30 @@
+@import 'variables.less';
+
+@sidebar-width: 200px;
+
+body {
+  background-color: @body-bg;
+}
+
+.sidebar {
+  width: @sidebar-width;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #222d32;
+  transition: transform .3s ease-in-out, width .3s ease-in-out;
+
+  @media (max-width: @screen-xs-max) {
+    transform: translate(-@sidebar-width);
+  }
+}
+
+.content-wrapper {
+  margin-left: @sidebar-width;
+  transition: transform .3s ease-in-out, margin .3s ease-in-out;
+
+  @media (max-width: @screen-xs-max) {
+    margin-left: 0;
+  }
+}

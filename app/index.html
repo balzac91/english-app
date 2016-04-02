@@ -11,8 +11,20 @@
 </head>
 <body ng-app="app">
 
-<menu></menu>
-<ui-view></ui-view>
+<div>
+  <div class="sidebar">
+    <menu></menu>
+  </div>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <ui-view></ui-view>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- inject:js -->
 <script src="./bower_components/angular/angular.min.js"></script>
