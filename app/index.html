@@ -4,55 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
-  <title>English App</title>
+  <title>Angielski</title>
   <!-- inject:css -->
   <link rel="stylesheet" href="./app.css">
   <!-- endinject -->
 </head>
 <body ng-app="app">
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Ucz się angielskiego!</a>
-    </div>
 
-    <div class="collapse navbar-collapse" id="main-menu-collapse">
-      <ul class="nav navbar-nav visible-xs">
-        <li ui-sref-active="active"><a ui-sref="dashboard" data-toggle="collapse" data-target="#main-menu-collapse">Strona główna</a></li>
-        <li ui-sref-active="active"><a ui-sref="learning" data-toggle="collapse" data-target="#main-menu-collapse">Rozpocznij naukę</a></li>
-        <li ui-sref-active="active"><a ui-sref="words" data-toggle="collapse" data-target="#main-menu-collapse">Lista słówek</a></li>
-        <li ui-sref-active="active"><a ui-sref="profile" data-toggle="collapse" data-target="#main-menu-collapse">Mój profil</a></li>
-        <li ui-sref-active="active"><a ui-sref="settings" data-toggle="collapse" data-target="#main-menu-collapse">Ustawienia</a></li>
-        <li ui-sref-active="active"><a ui-sref="logout" data-toggle="collapse" data-target="#main-menu-collapse">Wyloguj</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<div class="sidebar">
-  <ul class="nav">
-    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="dashboard" class="nav-link">Strona główna</a></li>
-    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="learning" class="nav-link">Rozpocznij naukę</a></li>
-    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="words" class="nav-link">Lista słówek</a></li>
-    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="profile" class="nav-link">Mój profil</a></li>
-    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="settings" class="nav-link">Ustawienia</a></li>
-    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="logout" class="nav-link">Wyloguj</a></li>
-  </ul>
-</div>
-<div class="content-wrapper">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-12">
-        <ui-view></ui-view>
-      </div>
-    </div>
-  </div>
-</div>
+<ui-view></ui-view>
 
 <!-- inject:js -->
 <script src="./bower_components/angular/angular.min.js"></script>

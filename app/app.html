@@ -1,0 +1,43 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Ucz się angielskiego!</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-menu-collapse">
+      <ul class="nav navbar-nav visible-xs">
+        <li ui-sref-active="active"><a ui-sref="app.dashboard" data-toggle="collapse" data-target="#main-menu-collapse">Strona główna</a></li>
+        <li ui-sref-active="active"><a ui-sref="app.learning" data-toggle="collapse" data-target="#main-menu-collapse">Rozpocznij naukę</a></li>
+        <li ui-sref-active="active"><a ui-sref="app.words" data-toggle="collapse" data-target="#main-menu-collapse">Lista słówek</a></li>
+        <li ui-sref-active="active"><a ui-sref="app.profile" data-toggle="collapse" data-target="#main-menu-collapse">Mój profil</a></li>
+        <li ui-sref-active="active"><a ui-sref="app.settings" data-toggle="collapse" data-target="#main-menu-collapse">Ustawienia</a></li>
+        <li ui-sref-active="active"><a ui-sref="app.logout" data-toggle="collapse" data-target="#main-menu-collapse">Wyloguj</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="sidebar">
+  <ul class="nav">
+    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="app.dashboard" class="nav-link">Strona główna</a></li>
+    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="app.learning" class="nav-link">Rozpocznij naukę</a></li>
+    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="app.words" class="nav-link">Lista słówek</a></li>
+    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="app.profile" class="nav-link">Mój profil</a></li>
+    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="app.settings" class="nav-link">Ustawienia</a></li>
+    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="app.logout" class="nav-link">Wyloguj</a></li>
+  </ul>
+</div>
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <ui-view></ui-view>
+      </div>
+    </div>
+  </div>
+</div>
