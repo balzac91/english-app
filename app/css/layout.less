@@ -1,19 +1,22 @@
 @import 'variables.less';
 
 @sidebar-width: 200px;
+@color-dark: #222d32;
+@menu-transition-duration: 0.4s;
 
 body {
   background-color: @body-bg;
 }
 
 .sidebar {
+  margin-top: 50px;
   width: @sidebar-width;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #222d32;
-  transition: transform .3s ease-in-out, width .3s ease-in-out;
+  background-color: @color-dark;
+  transition: transform @menu-transition-duration ease-in-out, width @menu-transition-duration ease-in-out;
 
   @media (max-width: @screen-xs-max) {
     transform: translate(-@sidebar-width);
@@ -22,7 +25,7 @@ body {
 
 .content-wrapper {
   margin-left: @sidebar-width;
-  transition: transform .3s ease-in-out, margin .3s ease-in-out;
+  transition: transform @menu-transition-duration ease-in-out, margin @menu-transition-duration ease-in-out;
 
   @media (max-width: @screen-xs-max) {
     margin-left: 0;

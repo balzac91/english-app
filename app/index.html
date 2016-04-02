@@ -10,17 +10,37 @@
   <!-- endinject -->
 </head>
 <body ng-app="app">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Ucz się angielskiego!</a>
+    </div>
 
-<div>
-  <div class="sidebar">
-    <menu></menu>
+    <div class="collapse navbar-collapse" id="main-menu-collapse">
+      <ul class="nav navbar-nav visible-xs">
+        <li ui-sref-active="active"><a ui-sref="pageOne" data-toggle="collapse" data-target="#main-menu-collapse">Page one</a></li>
+        <li ui-sref-active="active"><a ui-sref="pageTwo" data-toggle="collapse" data-target="#main-menu-collapse">Page two</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="content-wrapper">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-12">
-          <ui-view></ui-view>
-        </div>
+</nav>
+
+<div class="sidebar">
+  <ul>
+    <li ui-sref-active="active"><a ui-sref="pageOne">Page one</a></li>
+    <li ui-sref-active="active"><a ui-sref="pageTwo">Page two</a></li>
+  </ul>
+</div>
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <ui-view></ui-view>
       </div>
     </div>
   </div>
@@ -36,7 +56,6 @@
 <script src="./app.routes.js"></script>
 <script src="./pages/page-one/page-one.controller.js"></script>
 <script src="./pages/page-two/page-two.controller.js"></script>
-<script src="./components/menu/menu.directive.js"></script>
 <!-- endinject -->
 </body>
 </html>
