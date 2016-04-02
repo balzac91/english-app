@@ -2,6 +2,7 @@
 
 @sidebar-width: 200px;
 @menu-transition-duration: 0.4s;
+@nav-hover-duration: 0.2s;
 
 body {
   background-color: @body-bg;
@@ -21,17 +22,22 @@ body {
     transform: translate(-@sidebar-width);
   }
 
-  .nav-link {
-    color: @nav-link-color;
-
-    &:hover {
-      color: @nav-link-hover-color;
-    }
-  }
-
   .nav-list-item {
+    .nav-link {
+      color: @nav-link-color;
+      transition: background-color @nav-hover-duration ease-in-out, color @nav-hover-duration ease-in-out;
+
+      &:hover {
+        color: @nav-link-hover-color;
+      }
+    }
+
     &.active {
       background-color: @nav-link-active-bg;
+
+      .nav-link {
+        color: @nav-link-active-color;
+      }
     }
   }
 }
