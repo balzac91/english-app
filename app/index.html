@@ -32,15 +32,12 @@
 
 <div class="sidebar">
   <ul class="nav">
-    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="pageOne" class="nav-link">Page one</a></li>
-    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="pageTwo" class="nav-link">Page two</a></li>
-
-    <!--<li ui-sref-active="active" class="nav-list-item"><a ui-sref="pageOne" class="nav-link">Strona główna</a></li>-->
-    <!--<li ui-sref-active="active" class="nav-list-item"><a ui-sref="pageTwo" class="nav-link">Rozpocznij naukę</a></li>-->
-    <!--<li ui-sref-active="active" class="nav-list-item"><a ui-sref="pageTwo" class="nav-link">Lista słówek</a></li>-->
-    <!--<li ui-sref-active="active" class="nav-list-item"><a ui-sref="pageTwo" class="nav-link">Mój profil</a></li>-->
-    <!--<li ui-sref-active="active" class="nav-list-item"><a ui-sref="pageTwo" class="nav-link">Ustawienia</a></li>-->
-    <!--<li ui-sref-active="active" class="nav-list-item"><a ui-sref="pageTwo" class="nav-link">Wyloguj</a></li>-->
+    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="dashboard" class="nav-link">Strona główna</a></li>
+    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="learning" class="nav-link">Rozpocznij naukę</a></li>
+    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="words" class="nav-link">Lista słówek</a></li>
+    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="profile" class="nav-link">Mój profil</a></li>
+    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="settings" class="nav-link">Ustawienia</a></li>
+    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="logout" class="nav-link">Wyloguj</a></li>
   </ul>
 </div>
 <div class="content-wrapper">
@@ -61,8 +58,12 @@
 <script src="./bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
 <script src="./app.js"></script>
 <script src="./app.routes.js"></script>
-<script src="./pages/page-one/page-one.controller.js"></script>
-<script src="./pages/page-two/page-two.controller.js"></script>
+<script src="./pages/dashboard/dashboard.controller.js"></script>
+<script src="./pages/learning/learning.controller.js"></script>
+<script src="./pages/logout/logout.controller.js"></script>
+<script src="./pages/profile/profile.controller.js"></script>
+<script src="./pages/settings/settings.controller.js"></script>
+<script src="./pages/words/words.controller.js"></script>
 <!-- endinject -->
 </body>
 </html>
