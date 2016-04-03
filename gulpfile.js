@@ -144,9 +144,6 @@ gulp.task('watch', ['lint', 'css'], function () {
   watch(paths.less, function () {
     gulp.start('css')
   });
-
-  //gulp.watch(paths.js, ['lint']);
-  //gulp.watch(paths.less, ['css']);
 });
 
 /**
