@@ -1,19 +1,32 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
-      <form>
+      <form class="login-form" ng-submit="vm.submitForm()">
         <div class="form-group">
-          <input type="email" class="form-control" id="email" placeholder="Adres e-mail">
+          <input type="email" class="form-control input-lg" id="email" placeholder="Adres e-mail">
         </div>
+
         <div class="form-group">
-          <input type="password" class="form-control" id="password" placeholder="Hasło">
+          <input type="password" class="form-control input-lg" id="password" placeholder="Hasło">
         </div>
+
         <div class="checkbox">
           <label>
-            <input type="checkbox"> Check me out
+            <input type="checkbox"> Zapamiętaj mnie
           </label>
         </div>
-        <button type="submit" class="btn btn-default">Zaloguj</button>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Zaloguj</button>
+
+        <div class="row login-actions">
+          <div class="col-xs-6">
+            <a href="">Przypomnij hasło</a>
+          </div>
+
+          <div class="col-xs-6 text-right">
+            <a href="">Zarejestruj</a>
+          </div>
+        </div>
       </form>
     </div>
   </div>

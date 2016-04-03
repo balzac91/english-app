@@ -6,5 +6,9 @@
     .controller('LoginController', LoginController);
 
   function LoginController() {
+    var vm = this;
+
+    vm.submitForm = function () {
+    };
   }
 })();
