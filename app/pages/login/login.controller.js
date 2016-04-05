@@ -5,7 +5,9 @@
     .module('app')
     .controller('LoginController', LoginController);
 
-  function LoginController() {
+  LoginController.$inject = ['authService'];
+
+  function LoginController(authService) {
     var vm = this;
 
     vm.formData = {
@@ -14,6 +16,7 @@
     };
 
     vm.submitForm = function () {
+      authService.login(vm.formData.email, vm.formData.password);
     };
   }
 })();
