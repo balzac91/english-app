@@ -21,6 +21,9 @@
     vm.submitForm = function () {
       authService.login(vm.formData.email, vm.formData.password).then(function () {
       }, function (response) {
+        vm.invalidPassword = false;
+        vm.unknownError = false;
+
         if (response.status === 401) {
           vm.invalidPassword = true;
         } else {
