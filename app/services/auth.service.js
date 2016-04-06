@@ -19,7 +19,8 @@
       };
 
       return $http.post(config.apiUrl + 'authorization/login.json', data)
-        .then(function () {
+        .then(function (response) {
+          return response.data.data;
         });
     }
   }
