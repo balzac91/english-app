@@ -15,7 +15,8 @@
 
     vm.formData = {
       email: null,
-      password: null
+      password: null,
+      rememberMe: false
     };
 
     vm.submitForm = function () {
