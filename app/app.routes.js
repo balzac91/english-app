@@ -12,7 +12,9 @@
       .state('app', {
         url: '/',
         abstract: true,
-        templateUrl: './app.html'
+        templateUrl: './app.html',
+        controller: 'AppController',
+        controllerAs: 'vm'
       })
       .state('app.dashboard', {
         url: 'strona-glowna',
