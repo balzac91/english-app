@@ -2,7 +2,7 @@
   'use strict';
 
   var config = {
-    apiUrl: 'http://www.balzac.vot.pl/english/api/'
+    apiUrl: 'http://english.dev/api/'
   };
 
   angular

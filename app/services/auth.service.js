@@ -12,12 +12,18 @@
 
     return {
       getSession: getSession,
+      isAuthorized: isAuthorized,
       login: login,
       logout: logout
     };
 
     function getSession() {
       return session;
+    }
+
+    function isAuthorized() {
+      var sessionData = getSession();
+      return !!(sessionData && sessionData.sessionId);
     }
 
     function login(email, password) {
@@ -40,6 +46,7 @@
 
       return $http.post(config.apiUrl + 'authorization/logout.json', data)
         .then(function () {
+          session = {};
         });
     }
   }
