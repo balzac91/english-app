@@ -14,7 +14,12 @@
         abstract: true,
         templateUrl: './app.html',
         controller: 'AppController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        resolve: {
+          session: ['authService', function (authService) {
+            return authService.getSession();
+          }]
+        }
       })
       .state('app.dashboard', {
         url: 'strona-glowna',

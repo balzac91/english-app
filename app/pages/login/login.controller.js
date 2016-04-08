@@ -5,9 +5,9 @@
     .module('app')
     .controller('LoginController', LoginController);
 
-  LoginController.$inject = ['authService'];
+  LoginController.$inject = ['authService', '$state'];
 
-  function LoginController(authService) {
+  function LoginController(authService, $state) {
     var vm = this;
 
     vm.invalidPassword = false;
@@ -21,6 +21,7 @@
 
     vm.submitForm = function () {
       authService.login(vm.formData.email, vm.formData.password).then(function () {
+        $state.go('app.dashboard');
       }, function (response) {
         vm.invalidPassword = false;
         vm.unknownError = false;

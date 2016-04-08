@@ -8,10 +8,17 @@
   authService.$inject = ['$http', 'config'];
 
   function authService($http, config) {
+    var session = {};
+
     return {
+      getSession: getSession,
       login: login,
       logout: logout
     };
+
+    function getSession() {
+      return session;
+    }
 
     function login(email, password) {
       var data = {
@@ -21,13 +28,14 @@
 
       return $http.post(config.apiUrl + 'authorization/login.json', data)
         .then(function (response) {
-          return response.data.data;
+          session = response.data.data;
+          return session;
         });
     }
 
-    function logout() {
+    function logout(sessionId) {
       var data = {
-        sessionId: 'f8ca4620-fda1-4d53-893a-54f2e58dbbb9'
+        sessionId: sessionId
       };
 
       return $http.post(config.apiUrl + 'authorization/logout.json', data)

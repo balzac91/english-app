@@ -5,13 +5,15 @@
     .module('app')
     .controller('AppController', AppController);
 
-  AppController.$inject = ['authService'];
+  AppController.$inject = ['session', 'authService', '$state'];
 
-  function AppController(authService) {
+  function AppController(session, authService, $state) {
     var vm = this;
 
     vm.logout = function () {
-      authService.logout();
+      authService.logout(session.sessionId).then(function () {
+        $state.go('login');
+      });
     };
   }
 })();
