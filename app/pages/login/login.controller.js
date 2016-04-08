@@ -5,13 +5,13 @@
     .module('app')
     .controller('LoginController', LoginController);
 
-  LoginController.$inject = ['authService', '$state'];
+  LoginController.$inject = ['authService', 'validationErrors', '$state'];
 
-  function LoginController(authService, $state) {
+  function LoginController(authService, validationErrors, $state) {
     var vm = this;
 
-    vm.invalidPassword = false;
-    vm.unknownError = false;
+    vm.validationErrors = validationErrors;
+    vm.formError = null;
 
     vm.formData = {
       email: null,
@@ -23,13 +23,12 @@
       authService.login(vm.formData.email, vm.formData.password).then(function () {
         $state.go('app.dashboard');
       }, function (response) {
-        vm.invalidPassword = false;
-        vm.unknownError = false;
+        vm.formError = null;
 
         if (response.status === 401) {
-          vm.invalidPassword = true;
+          vm.formError = vm.validationErrors.incorrectEmailOrPassword;
         } else {
-          vm.unknownError = true;
+          vm.formError = vm.validationErrors.anyError;
         }
       });
     };
