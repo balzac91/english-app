@@ -28,6 +28,8 @@ body {
   }
 
   .nav-list-item {
+    cursor: pointer;
+
     .nav-link {
       color: @nav-link-color;
       transition: background-color @nav-hover-duration ease-in-out, color @nav-hover-duration ease-in-out;
@@ -44,6 +46,12 @@ body {
         color: @nav-link-active-color;
       }
     }
+  }
+}
+
+.navbar-nav {
+  li {
+    cursor: pointer;
   }
 }
 
