@@ -9,6 +9,7 @@
 
   function AppController(session, authService, $state) {
     var vm = this;
+    vm.session = session;
 
     vm.logout = function () {
       authService.logout(session.sessionId).then(function () {
