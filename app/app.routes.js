@@ -51,12 +51,6 @@
         controller: 'SettingsController',
         controllerAs: 'vm'
       })
-      .state('app.logout', {
-        url: 'wyloguj',
-        templateUrl: './pages/logout/logout.html',
-        controller: 'LogoutController',
-        controllerAs: 'vm'
-      })
       .state('login', {
         url: '/logowanie',
         templateUrl: './pages/login/login.html',

@@ -16,7 +16,7 @@
         <li ui-sref-active="active"><a ui-sref="app.words" data-toggle="collapse" data-target="#main-menu-collapse">Lista słówek</a></li>
         <li ui-sref-active="active"><a ui-sref="app.profile" data-toggle="collapse" data-target="#main-menu-collapse">Mój profil</a></li>
         <li ui-sref-active="active"><a ui-sref="app.settings" data-toggle="collapse" data-target="#main-menu-collapse">Ustawienia</a></li>
-        <li ui-sref-active="active"><a ui-sref="app.logout" data-toggle="collapse" data-target="#main-menu-collapse">Wyloguj</a></li>
+        <li><a ng-click="vm.logout()" data-toggle="collapse" data-target="#main-menu-collapse">Wyloguj</a></li>
       </ul>
     </div>
   </div>
