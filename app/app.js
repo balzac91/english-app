@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app', ['ui.router', 'ui.bootstrap'])
+    .module('app', ['ui.router', 'ui.bootstrap', 'ngCookies'])
     .run(runBlock);
 
   runBlock.$inject = ['authService', '$rootScope', '$state'];
