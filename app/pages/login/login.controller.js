@@ -20,17 +20,18 @@
     };
 
     vm.submitForm = function () {
-      authService.login(vm.formData.email, vm.formData.password).then(function () {
-        $state.go('app.dashboard');
-      }, function (response) {
-        vm.formError = null;
+      authService.login(vm.formData.email, vm.formData.password, vm.formData.rememberMe)
+        .then(function () {
+          $state.go('app.dashboard');
+        }, function (response) {
+          vm.formError = null;
 
-        if (response.status === 401) {
-          vm.formError = vm.validationErrors.incorrectEmailOrPassword;
-        } else {
-          vm.formError = vm.validationErrors.anyError;
-        }
-      });
+          if (response.status === 401) {
+            vm.formError = vm.validationErrors.incorrectEmailOrPassword;
+          } else {
+            vm.formError = vm.validationErrors.anyError;
+          }
+        });
     };
   }
 })();
