@@ -12,7 +12,7 @@
       .state('app', {
         url: '/',
         abstract: true,
-        templateUrl: './app.html',
+        templateUrl: './pages/app.html',
         controller: 'AppController',
         controllerAs: 'vm',
         resolve: {
