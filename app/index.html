@@ -11,6 +11,10 @@
 </head>
 <body ng-app="app">
 
+<div class="page-loader" ng-show="pageLoading">
+  <i class="fa fa-spinner fa-spin"></i>
+</div>
+
 <ui-view></ui-view>
 
 <!-- inject:js -->
