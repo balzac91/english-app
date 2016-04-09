@@ -15,7 +15,15 @@ body {
   z-index: 1000;
   font-size: 40px;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 1;
+
+  &.ng-hide-add, &.ng-hide-remove {
+    transition: all linear 0.1s;
+  }
+
+  &.ng-hide {
+    opacity: 0;
+  }
 }
 
 .login-form {
