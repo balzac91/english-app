@@ -5,6 +5,8 @@
     .module('app')
     .config(config);
 
+  config.$inject = ['$stateProvider', '$urlRouterProvider'];
+
   function config($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/strona-glowna');
 
@@ -55,9 +57,10 @@
         url: '/logowanie',
         templateUrl: './pages/login/login.html',
         controller: 'LoginController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        params: {
+          unauthorized: false
+        }
       });
   }
-
-  config.$inject = ['$stateProvider', '$urlRouterProvider'];
 })();

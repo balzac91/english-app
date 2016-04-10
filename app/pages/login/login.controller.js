@@ -5,13 +5,13 @@
     .module('app')
     .controller('LoginController', LoginController);
 
-  LoginController.$inject = ['authService', 'validationErrors', '$state'];
+  LoginController.$inject = ['authService', 'validationErrors', '$state', '$stateParams'];
 
-  function LoginController(authService, validationErrors, $state) {
+  function LoginController(authService, validationErrors, $state, $stateParams) {
     var vm = this;
 
     vm.validationErrors = validationErrors;
-    vm.formError = null;
+    vm.formError = $stateParams.unauthorized ? vm.validationErrors.unauthorized : null;
     vm.requestSent = false;
 
     vm.formData = {

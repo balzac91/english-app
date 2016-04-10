@@ -11,10 +11,6 @@
 </head>
 <body ng-app="app">
 
-<div class="page-loader" ng-show="pageLoading">
-  <i class="fa fa-spinner fa-spin"></i>
-</div>
-
 <ui-view></ui-view>
 
 <!-- inject:js -->
@@ -28,6 +24,7 @@
 <script src="./bower_components/angular-bootstrap-checkbox/angular-bootstrap-checkbox.js"></script>
 <script src="./app.js"></script>
 <script src="./app.routes.js"></script>
+<script src="./app.requests.js"></script>
 <script src="./configs/config.js"></script>
 <script src="./configs/validation-errors.js"></script>
 <script src="./services/auth.service.js"></script>
