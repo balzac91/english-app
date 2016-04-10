@@ -23,7 +23,6 @@
         },
         responseError: function (rejection) {
           if (rejection.status === 401) {
-            console.log('to login');
             $injector.get('$state').go('login', {unauthorized: true});
           }
 
