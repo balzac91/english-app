@@ -11,7 +11,7 @@
     var onStateChangeStart = $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState) {
       $rootScope.pageLoading = true;
 
-      if (authService.isAuthorized() && toState.name === 'login') {
+      if (authService.isAuthorized() && !toParams.unauthorized && toState.name === 'login') {
         event.preventDefault();
         if (fromState.name === 'app.dashboard') {
           $rootScope.pageLoading = false;
