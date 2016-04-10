@@ -23,6 +23,7 @@
     "angular-bootstrap": "^1.2.5",
     "angular-cookies": "^1.5.3",
     "angular-animate": "^1.5.3",
-    "angular-bootstrap-checkbox": "^0.4.0"
+    "angular-bootstrap-checkbox": "^0.4.0",
+    "angular-i18n": "^1.5.3"
   }
 }

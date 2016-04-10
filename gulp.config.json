@@ -20,6 +20,7 @@
   "less": "./app/**/*.less",
   "vendorJs": [
     "./app/bower_components/angular/angular.min.js",
+    "./app/bower_components/angular-i18n/angular-locale_pl-pl.js",
     "./app/bower_components/angular-ui-router/release/angular-ui-router.min.js",
     "./app/bower_components/angular-animate/angular-animate.min.js",
     "./app/bower_components/angular-cookies/angular-cookies.min.js",
