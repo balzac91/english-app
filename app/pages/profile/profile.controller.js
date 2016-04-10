@@ -5,6 +5,12 @@
     .module('app')
     .controller('ProfileController', ProfileController);
 
-  function ProfileController() {
+  ProfileController.$inject = ['config', 'session'];
+
+  function ProfileController(config, session) {
+    var vm = this;
+
+    vm.config = config;
+    vm.user = session.user;
   }
 })();

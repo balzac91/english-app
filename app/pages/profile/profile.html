@@ -1,1 +1,12 @@
-profil
+<h4>Profil użytkownika</h4>
+
+<dl class="dl-horizontal">
+  <dt>Login</dt>
+  <dd>{{vm.user.login}}</dd>
+
+  <dt>Adres e-mail</dt>
+  <dd>{{vm.user.email}}</dd>
+
+  <dt>Data dołączenia</dt>
+  <dd>{{vm.user.created | date:vm.config.dateFormat}} o {{vm.user.created | date:vm.config.timeFormat}}</dd>
+</dl>
