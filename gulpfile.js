@@ -175,5 +175,5 @@ gulp.task('css', function () {
     .pipe(replace(glyphiconsRegex, './bower_components/bootstrap/fonts/glyphicons-$1.$2'))
     .pipe(replace(fontAwesomeRegex, './bower_components/font-awesome/fonts/fontawesome-$1.$2'))
     .pipe(autoprefixer())
-    .pipe(gulp.dest(paths.app));
+    .pipe(gulp.dest(paths.app + 'pages/'));
 });
