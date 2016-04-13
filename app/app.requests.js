@@ -12,8 +12,8 @@
 
     function interceptor($q, $injector) {
       return {
-        request: function (conf) {
-          return conf;
+        request: function (requestConfig) {
+          return requestConfig;
         },
         requestError: function (rejection) {
           return $q.reject(rejection);
