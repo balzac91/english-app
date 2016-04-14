@@ -2,23 +2,23 @@
   <div class="row">
     <div class="col-xs-12 login-form-wrapper">
       <form class="login-form" ng-submit="vm.submitForm()" name="form">
-        <div class="alert alert-danger" ng-show="vm.formError">
+        <div class="alert alert-danger" ng-if="vm.formError">
           <span class="glyphicon glyphicon-exclamation-sign"></span>
           {{vm.formError}}
         </div>
 
         <div class="form-group" ng-class="{'has-error': form.email.$dirty && form.email.$invalid}">
           <input type="email" class="form-control input-lg" placeholder="Adres e-mail" name="email" ng-model="vm.formData.email" required>
-          <div ng-show="form.email.$dirty">
-            <div class="help-block with-errors" ng-show="form.email.$error.required">{{vm.validationErrors.emptyField}}</div>
-            <div class="help-block with-errors" ng-show="form.email.$error.email">{{vm.validationErrors.incorrectEmail}}</div>
+          <div ng-if="form.email.$dirty">
+            <div class="help-block with-errors" ng-if="form.email.$error.required">{{vm.validationErrors.emptyField}}</div>
+            <div class="help-block with-errors" ng-if="form.email.$error.email">{{vm.validationErrors.incorrectEmail}}</div>
           </div>
         </div>
 
         <div class="form-group" ng-class="{'has-error': form.password.$dirty && form.password.$invalid}">
           <input type="password" class="form-control input-lg" placeholder="Hasło" name="password" ng-model="vm.formData.password" required>
-          <div ng-show="form.password.$dirty">
-            <div class="help-block with-errors" ng-show="form.password.$error.required">{{vm.validationErrors.emptyField}}</div>
+          <div ng-if="form.password.$dirty">
+            <div class="help-block with-errors" ng-if="form.password.$error.required">{{vm.validationErrors.emptyField}}</div>
           </div>
         </div>
 
@@ -29,7 +29,7 @@
         </div>
 
         <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-lg btn-block" ng-disabled="form.$invalid"><span ng-show="vm.requestSent"><i class="fa fa-refresh fa-spin"></i></span> Zaloguj</button>
+          <button type="submit" class="btn btn-primary btn-lg btn-block" ng-disabled="form.$invalid"><span ng-if="vm.requestSent"><i class="fa fa-refresh fa-spin"></i></span> Zaloguj</button>
         </div>
 
         <div class="row" ng-hide="1">

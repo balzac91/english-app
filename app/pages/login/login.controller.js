@@ -25,7 +25,6 @@
 
       authService.login(vm.formData.email, vm.formData.password, vm.formData.rememberMe)
         .then(function () {
-          vm.requestSent = false;
           $state.go('app.dashboard');
         }, function (response) {
           vm.requestSent = false;
