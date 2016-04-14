@@ -42,7 +42,7 @@
     $rootScope.$on('$destroy', onStateChangeSuccess);
     $rootScope.$on('$destroy', onStateChangeError);
 
-    function resetLoaders () {
+    function resetLoaders() {
       $rootScope.pageLoading = false;
       $rootScope.mainPageLoading = false;
     }
