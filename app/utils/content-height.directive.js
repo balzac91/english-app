@@ -5,7 +5,7 @@
     .module('app')
     .directive('contentHeight', contentHeight);
 
-  contentHeight.inject = ['$window'];
+  contentHeight.$inject = ['$window'];
 
   function contentHeight($window) {
     return {
@@ -22,7 +22,6 @@
       function setHeight() {
         element.css({'min-height': $window.innerHeight - angular.element(document).find('.navbar').height() + 'px'});
       }
-
     }
   }
 })();
