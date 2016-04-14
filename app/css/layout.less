@@ -8,6 +8,10 @@ body {
   background-color: @body-bg;
 }
 
+.body-wrapper {
+  background-color: @color-dark;
+}
+
 .page-loader {
   width: 100%;
   height: 100%;
@@ -26,6 +30,12 @@ body {
   &.ng-hide {
     opacity: 0;
   }
+}
+
+.top-nav {
+  margin: 0;
+  border: none;
+  z-index: 100;
 }
 
 .login-form-wrapper {
@@ -50,13 +60,13 @@ body {
 }
 
 .sidebar {
-  margin-top: 50px;
+  padding-top: @navbar-height;
   width: @sidebar-width;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: @color-dark;
+  z-index: 10;
   transition: transform @menu-transition-duration ease-in-out, width @menu-transition-duration ease-in-out;
 
   @media (max-width: @screen-xs-max) {
@@ -93,6 +103,8 @@ body {
 
 .content-wrapper {
   margin-left: @sidebar-width;
+  padding-top: @navbar-height;
+  background-color: @body-bg;
   transition: transform @menu-transition-duration ease-in-out, margin @menu-transition-duration ease-in-out;
 
   @media (max-width: @screen-xs-max) {
