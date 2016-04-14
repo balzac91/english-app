@@ -13,14 +13,15 @@ body {
 }
 
 .page-loader {
+  padding-top: 500px;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
+  position: absolute;
+  top: 0;
+  background: rgba(255, 255, 255, 0.7);
   z-index: 1000;
   font-size: 40px;
+  text-align: center;
   opacity: 1;
 
   &.ng-hide-add, &.ng-hide-remove {
@@ -30,12 +31,20 @@ body {
   &.ng-hide {
     opacity: 0;
   }
+
+  @media (max-width: @screen-xs-max) {
+    padding-top: 300px;
+  }
 }
 
 .top-nav {
   margin: 0;
   border: none;
   z-index: 100;
+}
+
+.login-page {
+  background-color: @body-bg;
 }
 
 .login-form-wrapper {
@@ -104,6 +113,7 @@ body {
 .content-wrapper {
   margin-left: @sidebar-width;
   padding-top: @navbar-height;
+  position: relative;
   background-color: @body-bg;
   transition: transform @menu-transition-duration ease-in-out, margin @menu-transition-duration ease-in-out;
 
