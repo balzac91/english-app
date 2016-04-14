@@ -12,6 +12,10 @@
 <body ng-app="app">
 
 <div class="body-wrapper">
+  <div class="page-loader main-page" ng-show="mainPageLoading">
+    <i class="fa fa-spinner fa-spin"></i>
+  </div>
+
   <ui-view></ui-view>
 </div>
 

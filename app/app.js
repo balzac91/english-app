@@ -9,12 +9,16 @@
 
   function runBlock(authService, $rootScope, $state) {
     var onStateChangeStart = $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState) {
-      $rootScope.pageLoading = true;
+      if (!fromState.name) {
+        $rootScope.mainPageLoading = true;
+      } else {
+        $rootScope.pageLoading = true;
+      }
 
       if (authService.isAuthorized() && !toParams.unauthorized && toState.name === 'login') {
         event.preventDefault();
         if (fromState.name === 'app.dashboard') {
-          $rootScope.pageLoading = false;
+          resetLoaders();
         } else {
           $state.go('app.dashboard');
         }
@@ -27,15 +31,20 @@
     });
 
     var onStateChangeSuccess = $rootScope.$on('$stateChangeSuccess', function () {
-      $rootScope.pageLoading = false;
+      resetLoaders();
     });
 
     var onStateChangeError = $rootScope.$on('$stateChangeError', function () {
-      $rootScope.pageLoading = false;
+      resetLoaders();
     });
 
     $rootScope.$on('$destroy', onStateChangeStart);
     $rootScope.$on('$destroy', onStateChangeSuccess);
     $rootScope.$on('$destroy', onStateChangeError);
+
+    function resetLoaders () {
+      $rootScope.pageLoading = false;
+      $rootScope.mainPageLoading = false;
+    }
   }
 })();
