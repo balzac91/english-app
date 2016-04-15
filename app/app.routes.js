@@ -35,17 +35,6 @@
         controller: 'LearningController',
         controllerAs: 'vm'
       })
-      .state('app.words', {
-        url: 'lista-slowek',
-        templateUrl: './pages/words/words.html',
-        controller: 'WordsController',
-        controllerAs: 'vm',
-        resolve: {
-          categories: ['wordsService', function (wordsService) {
-            return wordsService.getCategories();
-          }]
-        }
-      })
       .state('app.profile', {
         url: 'profil',
         templateUrl: './pages/profile/profile.html',
