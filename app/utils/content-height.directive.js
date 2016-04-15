@@ -5,16 +5,19 @@
     .module('app')
     .directive('contentHeight', contentHeight);
 
-  contentHeight.$inject = ['$window'];
+  contentHeight.$inject = ['$window', '$timeout'];
 
-  function contentHeight($window) {
+  function contentHeight($window, $timeout) {
     return {
       restrict: 'A',
       link: link
     };
 
     function link(scope, element) {
-      setHeight();
+      $timeout(function () {
+        setHeight();
+      });
+
       angular.element($window).on('resize', function () {
         setHeight();
       });
