@@ -1,1 +1,5 @@
-słówka
+<ul>
+  <li ng-repeat="category in vm.categories track by category.id">
+    <a ui-sref="">{{category.name}}</a>
+  </li>
+</ul>

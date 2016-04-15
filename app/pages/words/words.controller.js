@@ -5,6 +5,11 @@
     .module('app')
     .controller('WordsController', WordsController);
 
-  function WordsController() {
+  WordsController.$inject = ['categories'];
+
+  function WordsController(categories) {
+    var vm = this;
+
+    vm.categories = categories.categories;
   }
 })();

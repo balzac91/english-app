@@ -39,7 +39,12 @@
         url: 'lista-slowek',
         templateUrl: './pages/words/words.html',
         controller: 'WordsController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        resolve: {
+          categories: ['wordsService', function (wordsService) {
+            return wordsService.getCategories();
+          }]
+        }
       })
       .state('app.profile', {
         url: 'profil',
