@@ -10,6 +10,7 @@
   function AppController(session, authService, $rootScope, $state) {
     var vm = this;
     vm.session = session;
+    vm.$state = $state;
 
     vm.logout = function () {
       $rootScope.pageLoading = true;

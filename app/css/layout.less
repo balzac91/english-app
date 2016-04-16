@@ -102,7 +102,7 @@ body {
       }
     }
 
-    &.active {
+    &.active, &.force-active {
       background-color: @nav-link-active-bg;
 
       .nav-link {
@@ -113,8 +113,20 @@ body {
 }
 
 .navbar-nav {
-  li {
+  .nav-list-item {
     cursor: pointer;
+
+    .nav-link {
+      &:hover {
+        background-color: @navbar-link-color-bg;
+      }
+    }
+
+    &.active, &.force-active {
+      .nav-link {
+        background-color: @navbar-link-color-bg
+      }
+    }
   }
 }
 
