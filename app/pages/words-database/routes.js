@@ -12,8 +12,6 @@
       .state('app.wordsDatabase', {
         url: 'baza-slowek',
         templateUrl: './pages/words-database/words-database.html',
-        controller: 'WordsDatabaseController',
-        controllerAs: 'vm',
         abstract: true
       })
       .state('app.wordsDatabase.categories', {
