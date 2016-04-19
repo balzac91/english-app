@@ -16,8 +16,8 @@
       })
       .state('app.learning.categories', {
         url: '/kategorie',
-        templateUrl: './pages/learning/categories/categories.html',
-        controller: 'CategoriesController',
+        templateUrl: './pages/learning/learning-categories/learning-categories.html',
+        controller: 'LearningCategoriesController',
         controllerAs: 'vm',
         resolve: {
           categories: ['wordsService', function (wordsService) {
@@ -27,8 +27,8 @@
       })
       .state('app.learning.words', {
         url: '/kategoria/:categoryId/slowka',
-        templateUrl: './pages/learning/words/words.html',
-        controller: 'WordsController',
+        templateUrl: './pages/learning/learning-words/learning-words.html',
+        controller: 'LearningWordsController',
         controllerAs: 'vm',
         resolve: {
           words: ['wordsService', '$stateParams', function (wordsService, $stateParams) {
