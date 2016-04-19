@@ -32,7 +32,7 @@
         controllerAs: 'vm',
         resolve: {
           words: ['wordsService', '$stateParams', function (wordsService, $stateParams) {
-            return wordsService.getWords($stateParams.categoryId);
+            return wordsService.getAllWords($stateParams.categoryId);
           }]
         }
       });

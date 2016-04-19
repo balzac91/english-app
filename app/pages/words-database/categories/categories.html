@@ -1,4 +1,6 @@
-<ul>
+<h3>Kategorie</h3>
+
+<ul class="list">
   <li ng-repeat="category in vm.categories track by category.id">
     <a ui-sref="app.wordsDatabase.words({categoryId: category.id})">{{category.name}}</a>
   </li>
