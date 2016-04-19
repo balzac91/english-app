@@ -29,12 +29,6 @@
         controller: 'DashboardController',
         controllerAs: 'vm'
       })
-      .state('app.learning', {
-        url: 'nauka-slowek',
-        templateUrl: './pages/learning/learning.html',
-        controller: 'LearningController',
-        controllerAs: 'vm'
-      })
       .state('app.profile', {
         url: 'profil',
         templateUrl: './pages/profile/profile.html',

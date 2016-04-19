@@ -12,7 +12,7 @@
     <div class="collapse navbar-collapse" id="main-menu-collapse">
       <ul class="nav navbar-nav visible-xs">
         <li ui-sref-active="active" class="nav-list-item"><a ui-sref="app.dashboard" data-toggle="collapse" data-target="#main-menu-collapse" class="nav-link">Strona główna</a></li>
-        <li ui-sref-active="active" class="nav-list-item"><a ui-sref="app.learning" data-toggle="collapse" data-target="#main-menu-collapse" class="nav-link">Rozpocznij naukę</a></li>
+        <li ui-sref-active="active" class="nav-list-item" ng-class="{'force-active': vm.$state.current.name.indexOf('learning') !== -1}"><a ui-sref="app.learning.categories" data-toggle="collapse" data-target="#main-menu-collapse" class="nav-link">Rozpocznij naukę</a></li>
         <li ui-sref-active="active" class="nav-list-item" ng-class="{'force-active': vm.$state.current.name.indexOf('wordsDatabase') !== -1}"><a ui-sref="app.wordsDatabase.categories" data-toggle="collapse" data-target="#main-menu-collapse" class="nav-link">Baza słówek</a></li>
         <li ui-sref-active="active" class="nav-list-item"><a ui-sref="app.profile" data-toggle="collapse" data-target="#main-menu-collapse" class="nav-link">Mój profil</a></li>
         <li ui-sref-active="active" class="nav-list-item"><a ui-sref="app.settings" data-toggle="collapse" data-target="#main-menu-collapse" class="nav-link">Ustawienia</a></li>
@@ -26,7 +26,7 @@
   <ul class="nav">
     {{vm.$state.current.name.indexOf('wordsDatabase')}}
     <li ui-sref-active="active" class="nav-list-item"><a ui-sref="app.dashboard" class="nav-link">Strona główna</a></li>
-    <li ui-sref-active="active" class="nav-list-item"><a ui-sref="app.learning" class="nav-link">Rozpocznij naukę</a></li>
+    <li ui-sref-active="active" class="nav-list-item" ng-class="{'force-active': vm.$state.current.name.indexOf('learning') !== -1}"><a ui-sref="app.learning.categories" class="nav-link">Rozpocznij naukę</a></li>
     <li ui-sref-active="active" class="nav-list-item" ng-class="{'force-active': vm.$state.current.name.indexOf('wordsDatabase') !== -1}"><a ui-sref="app.wordsDatabase.categories" class="nav-link">Baza słówek</a></li>
     <li ui-sref-active="active" class="nav-list-item"><a ui-sref="app.profile" class="nav-link">Mój profil</a></li>
     <li ui-sref-active="active" class="nav-list-item"><a ui-sref="app.settings" class="nav-link">Ustawienia</a></li>
