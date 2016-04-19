@@ -10,7 +10,7 @@
   function wordsService(authService, config, $http) {
     return {
       getCategories: getCategories,
-      getWords: getWords
+      getAllWords: getAllWords
     };
 
     function getCategories() {
@@ -24,13 +24,13 @@
         });
     }
 
-    function getWords(categoryId) {
+    function getAllWords(categoryId) {
       var data = {
         sessionId: authService.getSession().sessionId,
         categoryId: categoryId
       };
 
-      return $http.post(config.apiUrl + 'words/get.json', data)
+      return $http.post(config.apiUrl + 'words/getAll.json', data)
         .then(function (response) {
           return response.data.data;
         });
