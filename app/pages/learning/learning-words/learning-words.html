@@ -1,7 +1,17 @@
 <h3>Słówka</h3>
 
-<ul class="list">
-  <li ng-repeat="word in vm.words track by word.id">
-    {{word.english}} - {{word.polish}}
-  </li>
-</ul>
+<span class="word">{{vm.currentWord.english}}</span>
+<span class="translation" ng-class="{good: vm.correct, bad: !vm.correct}">{{vm.correctTranslation}}</span>
+
+<form ng-submit="vm.submitForm()" name="form">
+  <div class="form-group" ng-class="{'has-error': form.email.$dirty && form.email.$invalid}">
+    <input type="text" class="form-control" placeholder="Wpisz tłumaczenie tutaj" name="translation" ng-model="vm.formData.translation" ng-disabled="vm.disableInput" focus-input required autocomplete="off">
+    <div ng-if="form.translation.$dirty">
+      <div class="help-block with-errors" ng-if="form.email.$error.required">{{vm.validationErrors.emptyField}}</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid"><span ng-if="vm.requestSent"><i class="fa fa-refresh fa-spin"></i></span> {{vm.submitButtonText}}</button>
+  </div>
+</form>
