@@ -1,7 +1,9 @@
 <h3>Słówka</h3>
 
-<span class="word">{{vm.currentWord.english}}</span>
-<span class="translation" ng-class="{good: vm.correct, bad: !vm.correct}">{{vm.correctTranslation}}</span>
+<p>
+  <span class="word">{{vm.currentWord.english}}</span>
+  <span class="translation" ng-class="{good: vm.correct, bad: !vm.correct}">{{vm.correctTranslation}}</span>
+</p>
 
 <form ng-submit="vm.submitForm()" name="form">
   <div class="form-group" ng-class="{'has-error': form.email.$dirty && form.email.$invalid}">
