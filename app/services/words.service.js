@@ -11,7 +11,8 @@
     return {
       getCategories: getCategories,
       getWords: getWords,
-      getAllWords: getAllWords
+      getAllWords: getAllWords,
+      proposeTranslation: proposeTranslation
     };
 
     function getCategories() {
@@ -46,6 +47,18 @@
       return $http.post(config.apiUrl + 'words/getAll.json', data)
         .then(function (response) {
           return response.data.data;
+        });
+    }
+
+    function proposeTranslation(wordId, proposedTranslation) {
+      var data = {
+        word_id: wordId,
+        english: proposedTranslation
+      };
+
+      return $http.post('http://english.dev/tools/propose_translation', data)
+        .then(function (response) {
+          return response.status;
         });
     }
   }

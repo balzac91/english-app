@@ -6,18 +6,23 @@
 </p>
 
 <form ng-submit="vm.submitForm()" name="form">
-  <div class="form-group" ng-class="{'has-error': form.email.$dirty && form.email.$invalid}">
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Wpisz tłumaczenie tutaj" name="translation" ng-model="vm.formData.translation" ng-disabled="vm.disableInput" focus-input required autocomplete="off">
 
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Wpisz tłumaczenie tutaj" name="translation" ng-model="vm.formData.translation" ng-disabled="vm.disableInput" focus-input required autocomplete="off">
-
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid"><span ng-if="vm.requestSent"><i class="fa fa-refresh fa-spin"></i></span> {{vm.submitButtonText}}</button>
-      </span>
-
-      <div ng-if="form.translation.$dirty">
-        <div class="help-block with-errors" ng-if="form.email.$error.required">{{vm.validationErrors.emptyField}}</div>
-      </div>
-    </div>
+    <span class="input-group-btn">
+      <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid">{{vm.submitButtonText}}</button>
+    </span>
   </div>
 </form>
+
+<!--<br />-->
+
+<!--<form ng-submit="vm.submitProposedTranslationForm()" name="proposedTranslationForm">-->
+  <!--<div class="input-group">-->
+    <!--<input type="text" class="form-control" placeholder="Zaproponuj inne tłumaczenie" name="proposedTranslation" ng-model="vm.proposedTranslation" required autocomplete="off">-->
+
+    <!--<span class="input-group-btn">-->
+      <!--<button type="submit" class="btn btn-primary" ng-disabled="proposedTranslationForm.$invalid"><span ng-if="vm.requestSent"><i class="fa fa-refresh fa-spin"></i></span> Wyślij</button>-->
+    <!--</span>-->
+  <!--</div>-->
+<!--</form>-->

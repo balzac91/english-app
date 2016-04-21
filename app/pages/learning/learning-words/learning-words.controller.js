@@ -5,9 +5,9 @@
     .module('app')
     .controller('LearningWordsController', LearningWordsController);
 
-  LearningWordsController.$inject = ['words', '$state', '$stateParams'];
+  LearningWordsController.$inject = ['words', 'wordsService', '$state', '$stateParams'];
 
-  function LearningWordsController(words, $state, $stateParams) {
+  function LearningWordsController(words, wordsService, $state, $stateParams) {
     var vm = this;
 
     vm.formData = {
@@ -23,6 +23,7 @@
     vm.disableInput = false;
     vm.correct = null;
     vm.submitForm = submitForm;
+    vm.submitProposedTranslationForm = submitProposedTranslationForm;
 
     function submitForm() {
       if (vm.action === 'check') {
@@ -55,5 +56,14 @@
         $state.go('app.learning.words', {categoryId: $stateParams.categoryId}, {reload: true});
       }
     }
+
+    //function submitProposedTranslationForm () {
+    //  vm.requestSent = true;
+    //  wordsService.proposeTranslation(vm.currentWord.id, vm.proposedTranslation).then(function (response) {
+    //    vm.requestSent = false;
+    //  }, function () {
+    //    vm.requestSent = false;
+    //  });
+    //}
   }
 })();
