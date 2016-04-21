@@ -23,7 +23,7 @@
     vm.disableInput = false;
     vm.correct = null;
     vm.submitForm = submitForm;
-    vm.submitProposedTranslationForm = submitProposedTranslationForm;
+    //vm.submitProposedTranslationForm = submitProposedTranslationForm;
 
     function submitForm() {
       if (vm.action === 'check') {
