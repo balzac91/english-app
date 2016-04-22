@@ -21,9 +21,14 @@
       proposedTranslation: null
     };
 
+    vm.states = {
+      next: 'Dalej',
+      load: 'Pobierz',
+      check: 'Sprawdź'
+    };
+
     vm.submitButtonText = 'Sprawdź';
     vm.action = 'check';
-
 
     vm.submitForm = submitForm;
     //vm.submitProposedTranslationForm = submitProposedTranslationForm;
@@ -39,20 +44,13 @@
           });
 
           vm.correctTranslation = vm.currentWord.polish;
-          if (vm.words.length) {
-            vm.submitButtonText = 'Dalej';
-            vm.action = 'next';
-          } else {
-            vm.submitButtonText = 'Pobierz';
-            vm.action = 'load';
-          }
+          vm.action = vm.words.length ? 'next' : 'load';
           break;
 
         case 'next':
           vm.currentWord = vm.words.shift();
           vm.formData.translation = null;
           vm.correctTranslation = null;
-          vm.submitButtonText = 'Sprawdź';
           vm.action = 'check';
           break;
 
@@ -62,6 +60,7 @@
           break;
       }
     }
+
 //vh do loadera
     //function submitProposedTranslationForm () {
     //  vm.requestSent = true;

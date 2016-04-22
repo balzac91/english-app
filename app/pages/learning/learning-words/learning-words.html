@@ -10,7 +10,7 @@
     <input type="text" class="form-control" placeholder="Wpisz tłumaczenie tutaj" name="translation" ng-model="vm.formData.translation" ng-disabled="vm.disableInput" focus-input required autocomplete="off">
 
     <span class="input-group-btn">
-      <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid">{{vm.submitButtonText}}</button>
+      <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid">{{vm.states[vm.action]}}</button>
     </span>
   </div>
 </form>
