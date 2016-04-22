@@ -10,53 +10,59 @@
   function LearningWordsController(words, wordsService, $state, $stateParams) {
     var vm = this;
 
-    vm.formData = {
-      translation: null
-    };
-
     vm.words = words.words;
-    vm.wordsQueue = angular.copy(vm.words);
-    vm.currentWord = vm.wordsQueue.shift();
+    vm.currentWord = vm.words.shift();
     vm.correctTranslation = null;
-    vm.submitButtonText = 'Sprawdź';
-    vm.action = 'check';
     vm.disableInput = false;
     vm.correct = null;
+
+    vm.formData = {
+      translation: null,
+      proposedTranslation: null
+    };
+
+    vm.submitButtonText = 'Sprawdź';
+    vm.action = 'check';
+
+
     vm.submitForm = submitForm;
     //vm.submitProposedTranslationForm = submitProposedTranslationForm;
 
     function submitForm() {
-      if (vm.action === 'check') {
-        var words = vm.currentWord.polish;
-        var splittedWords = words.split(/[,;]/);
-        vm.correct = false;
+      switch (vm.action) {
+        case 'check':
+          vm.correct = false;
+          vm.currentWord.polish.split(/[,;]/).forEach(function (word) {
+            if (word.trim() === vm.formData.translation) {
+              vm.correct = true;
+            }
+          });
 
-        splittedWords.forEach(function (element) {
-          if (element.trim() === vm.formData.translation) {
-            vm.correct = true;
+          vm.correctTranslation = vm.currentWord.polish;
+          if (vm.words.length) {
+            vm.submitButtonText = 'Dalej';
+            vm.action = 'next';
+          } else {
+            vm.submitButtonText = 'Pobierz';
+            vm.action = 'load';
           }
-        });
+          break;
 
-        vm.correctTranslation = vm.currentWord.polish;
-        if (vm.wordsQueue.length) {
-          vm.submitButtonText = 'Dalej';
-          vm.action = 'next';
-        } else {
-          vm.submitButtonText = 'Pobierz';
-          vm.action = 'load';
-        }
-      } else if (vm.action === 'next') {
-        vm.currentWord = vm.wordsQueue.shift();
-        vm.correctTranslation = null;
-        vm.submitButtonText = 'Sprawdź';
-        vm.action = 'check';
-        vm.formData.translation = null;
-      } else if (vm.action === 'load') {
-        vm.disableInput = true;
-        $state.go('app.learning.words', {categoryId: $stateParams.categoryId}, {reload: true});
+        case 'next':
+          vm.currentWord = vm.words.shift();
+          vm.formData.translation = null;
+          vm.correctTranslation = null;
+          vm.submitButtonText = 'Sprawdź';
+          vm.action = 'check';
+          break;
+
+        case 'load':
+          vm.disableInput = true;
+          $state.go('app.learning.words', {categoryId: $stateParams.categoryId}, {reload: true});
+          break;
       }
     }
-
+//vh do loadera
     //function submitProposedTranslationForm () {
     //  vm.requestSent = true;
     //  wordsService.proposeTranslation(vm.currentWord.id, vm.proposedTranslation).then(function (response) {
