@@ -1,5 +1,7 @@
 <h3>Słówka</h3>
 
+<uib-progressbar max="100" value="vm.progress"></uib-progressbar>
+
 <p>
   <span class="word">{{vm.currentWord.english}}</span>
   <span class="translation" ng-class="{good: vm.correct, bad: !vm.correct}">{{vm.correctTranslation}}</span>

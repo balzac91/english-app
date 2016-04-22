@@ -15,6 +15,9 @@
     vm.correctTranslation = null;
     vm.disableInput = false;
     vm.correct = null;
+    vm.progress = 0;
+    vm.totalWords = vm.words.length;
+
 
     vm.formData = {
       translation: null,
@@ -43,6 +46,7 @@
             }
           });
 
+          vm.progress = 100 * (vm.totalWords - vm.words.length + 1) / (vm.totalWords + 1);
           vm.correctTranslation = vm.currentWord.polish;
           vm.action = vm.words.length ? 'next' : 'load';
           break;

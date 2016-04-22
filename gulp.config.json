@@ -27,6 +27,7 @@
     "./app/bower_components/angular-cookies/angular-cookies.min.js",
     "./app/bower_components/bootstrap/dist/js/bootstrap.min.js",
     "./app/bower_components/angular-bootstrap/ui-bootstrap.min.js",
+    "./app/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js",
     "./app/bower_components/angular-bootstrap-checkbox/angular-bootstrap-checkbox.js"
   ],
   "jsMinified": "app.min.js",
