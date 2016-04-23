@@ -17,7 +17,7 @@
     vm.correct = null;
     vm.progress = 0;
     vm.totalWords = vm.words.length;
-
+    vm.results = [];
 
     vm.formData = {
       translation: null,
@@ -49,6 +49,13 @@
           vm.progress = 100 * (vm.totalWords - vm.words.length + 1) / (vm.totalWords + 1);
           vm.correctTranslation = vm.currentWord.polish;
           vm.action = vm.words.length ? 'next' : 'load';
+          vm.results.push({
+            lp: vm.totalWords - vm.words.length + 1,
+            english: vm.currentWord.english,
+            answer: vm.formData.translation,
+            polish: vm.currentWord.polish,
+            correct: vm.correct
+          });
           break;
 
         case 'next':

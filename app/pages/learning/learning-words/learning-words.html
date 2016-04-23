@@ -17,6 +17,30 @@
   </div>
 </form>
 
+<br />
+
+<div class="table-responsive" ng-if="vm.results.length">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>L.p.</th>
+        <th>Słowo</th>
+        <th>Twoje tłumaczenie</th>
+        <th>Poprawne tłumaczenie</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr ng-repeat="result in vm.results" ng-class="{success: result.correct, danger: !result.correct}">
+        <td>{{result.lp}}.</td>
+        <td>{{result.english}}</td>
+        <td>{{result.answer}}</td>
+        <td>{{result.polish}}</td>
+      </tr>
+    </table>
+  </tbody>
+</div>
+
 <!--<br />-->
 
 <!--<form ng-submit="vm.submitProposedTranslationForm()" name="proposedTranslationForm">-->
