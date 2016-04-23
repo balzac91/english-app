@@ -5,13 +5,16 @@
     .module('app')
     .controller('LearningWordsController', LearningWordsController);
 
-  LearningWordsController.$inject = ['words', 'wordsService', '$state', '$stateParams'];
+  LearningWordsController.$inject = ['words', 'validationErrors', 'wordsService', '$state', '$stateParams'];
 
-  function LearningWordsController(words, wordsService, $state, $stateParams) {
+  function LearningWordsController(words, validationErrors, wordsService, $state, $stateParams) {
     var vm = this;
 
     vm.words = words.words;
+    vm.validationErrors = validationErrors;
     vm.currentWord = vm.words.shift();
+    vm.translationSent = false;
+    vm.proposedTranslationError = false;
     vm.correctTranslation = null;
     vm.disableInput = false;
     vm.correct = null;
@@ -34,7 +37,7 @@
     vm.action = 'check';
 
     vm.submitForm = submitForm;
-    //vm.submitProposedTranslationForm = submitProposedTranslationForm;
+    vm.submitProposedTranslationForm = submitProposedTranslationForm;
 
     function submitForm() {
       switch (vm.action) {
@@ -61,6 +64,9 @@
         case 'next':
           vm.currentWord = vm.words.shift();
           vm.formData.translation = null;
+          vm.formData.proposedTranslation = null;
+          vm.translationSent = false;
+          vm.proposedTranslationError = false;
           vm.correctTranslation = null;
           vm.action = 'check';
           break;
@@ -72,14 +78,16 @@
       }
     }
 
-//vh do loadera
-    //function submitProposedTranslationForm () {
-    //  vm.requestSent = true;
-    //  wordsService.proposeTranslation(vm.currentWord.id, vm.proposedTranslation).then(function (response) {
-    //    vm.requestSent = false;
-    //  }, function () {
-    //    vm.requestSent = false;
-    //  });
-    //}
+    function submitProposedTranslationForm() {
+      vm.requestSent = true;
+      wordsService.proposeTranslation(vm.currentWord.id, vm.formData.proposedTranslation).then(function (response) {
+        vm.requestSent = false;
+        vm.translationSent = true;
+        vm.proposedTranslationError = false;
+      }, function () {
+        vm.requestSent = false;
+        vm.proposedTranslationError = true;
+      });
+    }
   }
 })();

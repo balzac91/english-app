@@ -52,11 +52,12 @@
 
     function proposeTranslation(wordId, proposedTranslation) {
       var data = {
-        word_id: wordId,
+        sessionId: authService.getSession().sessionId,
+        wordId: wordId,
         english: proposedTranslation
       };
 
-      return $http.post('http://english.dev/tools/propose_translation', data)
+      return $http.post(config.apiUrl + 'words/proposeTranslation.json', data)
         .then(function (response) {
           return response.status;
         });

@@ -19,6 +19,23 @@
 
 <br />
 
+<form ng-submit="vm.submitProposedTranslationForm()" name="proposedTranslationForm">
+  <div class="form-group" ng-class="{'has-error': vm.proposedTranslationError, 'has-success': vm.translationSent}">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Zaproponuj inne tłumaczenie" name="proposedTranslation" ng-model="vm.formData.proposedTranslation" ng-disabled="vm.translationSent" required autocomplete="off">
+
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-disabled="proposedTranslationForm.$invalid || vm.translationSent"><span ng-if="vm.requestSent"><i class="fa fa-refresh fa-spin"></i></span> Wyślij</button>
+      </span>
+    </div>
+
+    <div class="help-block" ng-if="vm.proposedTranslationError">{{vm.validationErrors.anyError}}</div>
+    <div class="help-block" ng-if="vm.translationSent">Tłumaczenie zostało wysłane</div>
+  </div>
+</form>
+
+<br />
+
 <div class="table-responsive" ng-if="vm.results.length">
   <table class="table">
     <thead>
@@ -40,15 +57,3 @@
     </table>
   </tbody>
 </div>
-
-<!--<br />-->
-
-<!--<form ng-submit="vm.submitProposedTranslationForm()" name="proposedTranslationForm">-->
-  <!--<div class="input-group">-->
-    <!--<input type="text" class="form-control" placeholder="Zaproponuj inne tłumaczenie" name="proposedTranslation" ng-model="vm.formData.proposedTranslation" required autocomplete="off">-->
-
-    <!--<span class="input-group-btn">-->
-      <!--<button type="submit" class="btn btn-primary" ng-disabled="proposedTranslationForm.$invalid"><span ng-if="vm.requestSent"><i class="fa fa-refresh fa-spin"></i></span> Wyślij</button>-->
-    <!--</span>-->
-  <!--</div>-->
-<!--</form>-->

@@ -10,15 +10,15 @@
         <div class="form-group" ng-class="{'has-error': form.email.$dirty && form.email.$invalid}">
           <input type="email" class="form-control input-lg" placeholder="Adres e-mail" name="email" ng-model="vm.formData.email" required>
           <div ng-if="form.email.$dirty">
-            <div class="help-block with-errors" ng-if="form.email.$error.required">{{vm.validationErrors.emptyField}}</div>
-            <div class="help-block with-errors" ng-if="form.email.$error.email">{{vm.validationErrors.incorrectEmail}}</div>
+            <div class="help-block" ng-if="form.email.$error.required">{{vm.validationErrors.emptyField}}</div>
+            <div class="help-block" ng-if="form.email.$error.email">{{vm.validationErrors.incorrectEmail}}</div>
           </div>
         </div>
 
         <div class="form-group" ng-class="{'has-error': form.password.$dirty && form.password.$invalid}">
           <input type="password" class="form-control input-lg" placeholder="Hasło" name="password" ng-model="vm.formData.password" required>
           <div ng-if="form.password.$dirty">
-            <div class="help-block with-errors" ng-if="form.password.$error.required">{{vm.validationErrors.emptyField}}</div>
+            <div class="help-block" ng-if="form.password.$error.required">{{vm.validationErrors.emptyField}}</div>
           </div>
         </div>
 
