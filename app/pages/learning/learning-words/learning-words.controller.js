@@ -80,7 +80,7 @@
 
     function submitProposedTranslationForm() {
       vm.requestSent = true;
-      wordsService.proposeTranslation(vm.currentWord.id, vm.formData.proposedTranslation).then(function (response) {
+      wordsService.proposeTranslation(vm.currentWord.id, vm.formData.proposedTranslation).then(function () {
         vm.requestSent = false;
         vm.translationSent = true;
         vm.proposedTranslationError = false;
