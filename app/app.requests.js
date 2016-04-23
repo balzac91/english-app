@@ -22,7 +22,7 @@
           return response;
         },
         responseError: function (rejection) {
-          if (rejection.status === 401) {
+          if (rejection.status === 401 || rejection.status === -1) {
             $injector.get('$state').go('login', {unauthorized: true});
           }
 

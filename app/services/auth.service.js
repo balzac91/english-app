@@ -18,7 +18,7 @@
     };
 
     function getSession() {
-      var cookieSession = $cookies.getObject('session');
+      var cookieSession = $cookies.getObject('eng-session-data');
       if (cookieSession) {
         session = cookieSession;
       }
@@ -41,7 +41,7 @@
         .then(function (response) {
           session = response.data.data;
           if (rememberMe) {
-            $cookies.putObject('session', session);
+            $cookies.putObject('eng-session-data', session);
           }
           return session;
         });
@@ -60,7 +60,7 @@
 
     function resetData() {
       session = {};
-      $cookies.remove('session');
+      $cookies.remove('eng-session-data');
     }
   }
 })();
