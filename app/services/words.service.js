@@ -54,7 +54,7 @@
       var data = {
         sessionId: authService.getSession().sessionId,
         wordId: wordId,
-        english: proposedTranslation
+        polish: proposedTranslation
       };
 
       return $http.post(config.apiUrl + 'words/proposeTranslation.json', data)
