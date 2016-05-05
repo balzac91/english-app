@@ -21,6 +21,7 @@
     vm.progress = 0;
     vm.totalWords = vm.words.length;
     vm.results = [];
+    vm.answers = [];
 
     vm.formData = {
       translation: null,
@@ -59,6 +60,10 @@
             polish: vm.currentWord.polish,
             correct: vm.correct
           });
+          vm.answers.push({
+            wordId: vm.currentWord.id,
+            correct: vm.correct
+          });
           break;
 
         case 'next':
@@ -72,6 +77,8 @@
           break;
 
         case 'load':
+          wordsService.answer(vm.answers);
+          vm.answers = [];
           vm.disableInput = true;
           $state.go('app.learning.words', {categoryId: $stateParams.categoryId}, {reload: true});
           break;

@@ -12,7 +12,8 @@
       getCategories: getCategories,
       getWords: getWords,
       getAllWords: getAllWords,
-      proposeTranslation: proposeTranslation
+      proposeTranslation: proposeTranslation,
+      answer: answer
     };
 
     function getCategories() {
@@ -58,6 +59,18 @@
       };
 
       return $http.post(config.apiUrl + 'words/proposeTranslation.json', data)
+        .then(function (response) {
+          return response.status;
+        });
+    }
+
+    function answer(answers) {
+      var data = {
+        sessionId: authService.getSession().sessionId,
+        answers: answers
+      };
+
+      return $http.post(config.apiUrl + 'words/answer.json', data)
         .then(function (response) {
           return response.status;
         });
